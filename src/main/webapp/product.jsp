@@ -16,7 +16,7 @@
 <body>
    <%-- <%@ include file="./menu.jsp" %> --%>
    <jsp:include page="./menu.jsp"/>
-
+	
    <!-- <h1>웹 쇼핑몰에 오신 것을 환영합니다.</h1> -->
    <!-- <h3>Welcome to Web Market !</h3> -->
    
@@ -29,12 +29,10 @@
    <div class="container">
          <div class="row" align="center">
          <%
-            //ProductRepository productDAO = new ProductRepository();
-         	ProductRepository productDAO = ProductRepository.getInstance();
-            ArrayList<Product> listOfProducts = productDAO.getAllProducts();
-            
-            for(int i = 0; i<listOfProducts.size(); i++){
-               Product product = listOfProducts.get(i);   
+         String id = request.getParameter("id");
+         //dao 상세 보기 메소드 호출
+         ProductRepository productDAO = ProductRepository.getInstance();
+         Product product = productDAO.getProductById(id);
 
          %>
          <div class="col-md-4">
@@ -44,9 +42,6 @@
          <p><%=product.getUnitPrice() %>
          <p><a href="./product.jsp?id=<%=product.getProductId() %>" class="btn btn-secondary" role="button">상세 정보 &raquo;</a>
       </div>         
-         <%
-            }
-         %>
       </div>
    </div>
 </body>
