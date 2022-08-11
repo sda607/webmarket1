@@ -130,28 +130,28 @@
             </div>
          </div>
          <div class="form-group row">
-            <label class="col-sm-2"></label>
-            <div class="col-sm-5">
-               <input type="radio" name="condition" value="New "><fmt:message key="condition_New " />
-               <input type="radio" name="condition" value="Old "><fmt:message key="condition_Old " />
-               <input type="radio" name="condition" value="Refurbished "><fmt:message key="condition_Refurbished " />
-            </div>
-         </div>
+				<label class="col-sm-2"></label>
+				<div class="col-sm-5">
+					<label><input type="radio" name="condition" value="New "> <fmt:message key="condition_New" /></label>
+					<label><input type="radio" name="condition" value="Old "> <fmt:message key="condition_Old" /></label>
+					<label><input type="radio" name="condition" value="Refurbished "> <fmt:message key="condition_Refurbished" /></label>
+				</div>
+			</div>
           <div class="form-group row">
-            <label class="col-sm-2"><fmt:message key="productImage " /></label>
-            <div class="col-sm-5">
-               <input type="file" name="productImage" class="form-control>">
-            </div>
-         </div>
+				<label class="col-sm-2"><fmt:message key="productImage" /></label>
+				<div class="col-sm-5">
+					<input type="file" name="productImage" class="form-control">
+				</div>
+			</div>
          <div class="form-group row">
             <div class="col-sm-3">
-               <input type="button" value="등록" class="btn btn-primary" onclick="checkAddProduct()">
+               <input type="button" value="<fmt:message key="button" />"  class="btn btn-primary" onclick="checkAddProduct()">
             </div>
          </div>
          
       </form>
     </div>
-</body>
-<jsp:include page="./footer.jsp"/>
+    <jsp:include page="./footer.jsp"/>
 </fmt:bundle>
+</body>
 </html>
