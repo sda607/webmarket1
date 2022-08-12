@@ -4,24 +4,25 @@ import java.io.Serializable;
 
 public class Product implements Serializable{
 
-	private static final long serialVersionUID = 1L;
-
-	//필드 (멤버 변수)
-	private String productId;		//상품 아이디
-	private String pname;			//상품명
-	private Integer unitPrice;		//가격
-	private String description;		//상품 설명
-	private String manufacturer;	//제조사
-	private String category;		//분류
-	private long unitsInStock;		//재고 수
-	private String condition;		//신상품 / 중고품 /재상품
-	private String productImage; 		//이미지 파일
+	private static final long serialVersionUID = 100L;
+	
+	//필드(멤버 변수)
+	private String productId;   //상품 아이디
+	private String pname;       //상품명
+	private Integer unitPrice;  //가격
+	private String description; //상품 설명
+	private String manufacturer;//제조사
+	private String category;    //분류
+	private long unitsInStock;  //재고수
+	private String condition;   //신상품 or 중고품 or 재생품
+	private String productImage; //이미지 파일
+	private int quantity;		//장바구니에 담은 개수
 	
 	//기본생성자
 	public Product() {}
-
+	
 	//매개변수가 있는 생성자
-	public Product(String productId, String pname, Integer unitPrice ) {
+	public Product(String productId, String pname, Integer unitPrice) {
 		this.productId = productId;
 		this.pname = pname;
 		this.unitPrice = unitPrice;
@@ -85,10 +86,12 @@ public class Product implements Serializable{
 		this.productImage = productImage;
 	}
 
-	
-	
-	
-	
-	
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 	
 }
